@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using SolidExercices.Console;
+using SolidExercices;
 
 namespace SolidExercices
 {

@@ -19,11 +19,11 @@ Réponses aux questions posées
 
 Q1) On peut faire un interface avec une classe pour chaque operation puis on test pour chaque operation si elle est faisable.
 
-Q2)
+Q2) C'est le principe de Responsabilité Unique mis en place avec l'interface
 
-Q3)
+Q3) C'est l'inversion de dependance c'est a dire que l'on peut rajouté une classe d'operations facilement.
 
-Q4)
+Q4) Il manque la list des instances des classe operations
 
 Q5)
 
