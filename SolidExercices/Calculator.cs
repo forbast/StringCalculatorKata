@@ -34,7 +34,31 @@ namespace SolidExercices
                 try
                 {
                     total = Convert.ToDecimal(listNumber[0]);
-                    listNumber[0] = "0";
+                }
+                catch (System.FormatException)
+                {
+                    Console.WriteLine("Caracteres entrés non pris en charge");
+                    return 0;
+                }
+                foreach (var oneNumber in listNumber.Skip(1).ToArray())
+                {
+                    try
+                    {
+                        total = total - Convert.ToDecimal(oneNumber);
+                    }
+                    catch (System.FormatException)
+                    {
+                        Console.WriteLine("Caracteres entrés non pris en charge");
+                        return 0;
+                    }
+                }
+            }
+            else if (operation.Contains("/"))
+            {
+                String[] listNumber = operation.Split('/');
+                try
+                {
+                    total = Convert.ToDecimal(listNumber[0]);
                 }
                 catch (System.FormatException)
                 {
@@ -42,11 +66,11 @@ namespace SolidExercices
                     return 0;
                 }
 
-                foreach (var oneNumber in listNumber)
+                foreach (var oneNumber in listNumber.Skip(1).ToArray())
                 {
                     try
                     {
-                        total = total - Convert.ToDecimal(oneNumber);
+                        total = total / Convert.ToDecimal(oneNumber);
                     }
                     catch (System.FormatException)
                     {
