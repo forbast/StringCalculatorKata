@@ -1,5 +1,7 @@
-﻿using NFluent;
+﻿using System.Linq.Expressions;
+using NFluent;
 using NUnit.Framework;
+using NUnit.Framework.Constraints;
 
 namespace SolidExercices.Tests
 {
@@ -86,6 +88,9 @@ namespace SolidExercices.Tests
             // Autre
             result = calculator.Calculate("zzrz");
             Check.That(result).IsEqualTo(0m);
+
+
+        
 
 
         }

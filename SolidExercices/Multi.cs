@@ -6,26 +6,26 @@ using System.Threading.Tasks;
 
 namespace SolidExercices
 {
-    class Sum : IOperations
+    class Multi : IOperations
     {
         public bool CanMakeOperation(String operation)
         {
-            return operation.Contains("+");
+            return operation.Contains("*");
         }
 
         public decimal MakeOperation(String operation)
         {
-            decimal total = 0;
-            String[] listNumber = operation.Split('+');
+            decimal total = 1;
+            String[] listNumber = operation.Split('*');
             foreach (var oneNumber in listNumber)
             {
                 try
                 {
-                    total += Convert.ToDecimal(oneNumber);
+                    total = total * Convert.ToDecimal(oneNumber);
                 }
                 catch (System.FormatException)
                 {
-                    Console.WriteLine("Caracteres entrés non pris en charge 1");
+                    Console.WriteLine("Caracteres entrés non pris en charge");
                     return 0;
                 }
             }

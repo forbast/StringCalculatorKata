@@ -12,79 +12,25 @@ namespace SolidExercices
             decimal total = 0;
 
             IOperations sum = new Sum();
+            IOperations div = new Div();
+            IOperations multi = new Multi();
+            IOperations sub = new Sub();
 
-            if (sum.CanSum(operation))
+            if (sum.CanMakeOperation(operation))
             {
-                return sum.MakeSum(operation);
+                return sum.MakeOperation(operation);
             }
-
-            else if (operation.Contains("-"))
+            else if (div.CanMakeOperation(operation))
             {
-                String[] listNumber = operation.Split('-');
-                try
-                {
-                    total = Convert.ToDecimal(listNumber[0]);
-                }
-                catch (System.FormatException)
-                {
-                    Console.WriteLine("Caracteres entrés non pris en charge");
-                    return 0;
-                }
-                foreach (var oneNumber in listNumber.Skip(1).ToArray())
-                {
-                    try
-                    {
-                        total = total - Convert.ToDecimal(oneNumber);
-                    }
-                    catch (System.FormatException)
-                    {
-                        Console.WriteLine("Caracteres entrés non pris en charge");
-                        return 0;
-                    }
-                }
+                return div.MakeOperation(operation);
             }
-            else if (operation.Contains("/"))
+            else if (multi.CanMakeOperation(operation))
             {
-                String[] listNumber = operation.Split('/');
-                try
-                {
-                    total = Convert.ToDecimal(listNumber[0]);
-                }
-                catch (System.FormatException)
-                {
-                    Console.WriteLine("Caracteres entrés non pris en charge");
-                    return 0;
-                }
-
-                foreach (var oneNumber in listNumber.Skip(1).ToArray())
-                {
-                    try
-                    {
-                        total = total / Convert.ToDecimal(oneNumber);
-                    }
-                    catch (System.FormatException)
-                    {
-                        Console.WriteLine("Caracteres entrés non pris en charge");
-                        return 0;
-                    }
-                }
+                return multi.MakeOperation(operation);
             }
-            else if (operation.Contains("*"))
+            else if (sub.CanMakeOperation(operation))
             {
-                total = 1;
-                String[] listNumber = operation.Split('*');
-                foreach (var oneNumber in listNumber)
-                {
-                    try
-                    {
-                        total = total * Convert.ToDecimal(oneNumber);
-                    }
-                    catch (System.FormatException)
-                    {
-                        Console.WriteLine("Caracteres entrés non pris en charge");
-                        return 0;
-                    }
-                }
+                return sub.MakeOperation(operation);
             }
             else
             {

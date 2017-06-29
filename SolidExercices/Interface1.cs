@@ -8,7 +8,9 @@ namespace SolidExercices
 {
     interface IOperations
     {
-        bool CanSum(String operation);
-        decimal MakeSum(String operation);
+        bool CanMakeOperation(String operation);
+        decimal MakeOperation(String operation);
+
+
     }
 }
