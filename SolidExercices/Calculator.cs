@@ -13,8 +13,15 @@ namespace SolidExercices
             String[] listNumber = operation.Split('+');
             foreach (var oneNumber in listNumber)
             {
-                sum += Convert.ToDecimal(oneNumber);
-                Console.WriteLine(sum);
+                try
+                {
+                    sum += Convert.ToDecimal(oneNumber);
+                }
+                catch (System.FormatException)
+                {
+                    Console.WriteLine("Caracteres entrés non pris en charge");
+                    return 0;
+                }
             }
             return sum;
         }
