@@ -38,6 +38,11 @@ namespace SolidExercices
                     Console.WriteLine("Caracteres entrés non pris en charge");
                     return 0;
                 }
+                catch (System.DivideByZeroException)
+                {
+                    Console.WriteLine("La division par  est impossible");
+                    return 0;
+                }
             }
             return total;
         }

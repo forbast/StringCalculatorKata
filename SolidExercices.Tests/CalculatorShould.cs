@@ -11,12 +11,12 @@ namespace SolidExercices.Tests
         [Test]
         public void CalculateASum()
         {
-            var operations = new List<IOperations> { new Sum(), new Sub(), new Div(), new Multi() };
-            var calculator = new Calculator(operations);
-
+            //var operations = new List<IOperations> { new Sum(), new Sub(), new Div(), new Multi() };
+            var calculatorTrainer = new CalculatorTrainer();
+            calculatorTrainer.Run();
 
             // Addition
-            var result = calculator.Calculate("1+2,3");
+           /* var result = calculator.Calculate("1+2,3");
             Check.That(result).IsEqualTo(3.3m);
 
             result = calculator.Calculate("1+4+6");
@@ -89,7 +89,7 @@ namespace SolidExercices.Tests
 
             // Autre
             result = calculator.Calculate("zzrz");
-            Check.That(result).IsEqualTo(0m);
+            Check.That(result).IsEqualTo(0m);*/
 
 
         
