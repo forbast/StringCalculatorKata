@@ -79,6 +79,23 @@ namespace SolidExercices
                     }
                 }
             }
+            else if (operation.Contains("*"))
+            {
+                total = 1;
+                String[] listNumber = operation.Split('*');
+                foreach (var oneNumber in listNumber)
+                {
+                    try
+                    {
+                        total = total * Convert.ToDecimal(oneNumber);
+                    }
+                    catch (System.FormatException)
+                    {
+                        Console.WriteLine("Caracteres entrés non pris en charge");
+                        return 0;
+                    }
+                }
+            }
             else
             {
                 try
