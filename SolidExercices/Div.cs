@@ -40,7 +40,7 @@ namespace SolidExercices
                 }
                 catch (System.DivideByZeroException)
                 {
-                    Console.WriteLine("La division par  est impossible");
+                    Console.WriteLine("La division par 0 est impossible");
                     return 0;
                 }
             }

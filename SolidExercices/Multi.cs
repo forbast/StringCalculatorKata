@@ -10,13 +10,13 @@ namespace SolidExercices
     {
         public bool CanMakeOperation(String operation)
         {
-            return operation.Contains("*");
+            return operation.Contains("x");
         }
 
         public decimal MakeOperation(String operation)
         {
             decimal total = 1;
-            String[] listNumber = operation.Split('*');
+            String[] listNumber = operation.Split('x');
             foreach (var oneNumber in listNumber)
             {
                 try
