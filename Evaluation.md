@@ -17,7 +17,7 @@ A LA FIN DU TP: pensez à pousser vos commits sur votre compte GitHub et envoyer 
 Réponses aux questions posées
 -----------------------------
 
-Q1)
+Q1) On peut faire un interface avec une classe pour chaque operation puis on test pour chaque operation si elle est faisable.
 
 Q2)
 

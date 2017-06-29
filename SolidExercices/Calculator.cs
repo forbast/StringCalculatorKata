@@ -9,25 +9,15 @@ namespace SolidExercices
     {
         public decimal Calculate(string operation)
         {
-            decimal total;
+            decimal total = 0;
 
-            if (operation.Contains("+"))
+            IOperations sum = new Sum();
+
+            if (sum.CanSum(operation))
             {
-                total = 0;
-                String[] listNumber = operation.Split('+');
-                foreach (var oneNumber in listNumber)
-                {
-                    try
-                    {
-                        total += Convert.ToDecimal(oneNumber);
-                    }
-                    catch (System.FormatException)
-                    {
-                        Console.WriteLine("Caracteres entrés non pris en charge");
-                        return 0;
-                    }
-                }
+                return sum.MakeSum(operation);
             }
+
             else if (operation.Contains("-"))
             {
                 String[] listNumber = operation.Split('-');
