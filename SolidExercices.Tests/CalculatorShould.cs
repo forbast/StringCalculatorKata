@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using System.Collections.Generic;
+using System.Linq.Expressions;
 using NFluent;
 using NUnit.Framework;
 using NUnit.Framework.Constraints;
@@ -10,7 +11,8 @@ namespace SolidExercices.Tests
         [Test]
         public void CalculateASum()
         {
-            var calculator = new Calculator();
+            var operations = new List<IOperations> { new Sum(), new Sub(), new Div(), new Multi() };
+            var calculator = new Calculator(operations);
 
 
             // Addition

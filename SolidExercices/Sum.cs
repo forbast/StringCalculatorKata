@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SolidExercices
 {
-    class Sum : IOperations
+    public class Sum : IOperations
     {
         public bool CanMakeOperation(String operation)
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SolidExercices
 {
-    interface IOperations
+    public interface IOperations
     {
         bool CanMakeOperation(String operation);
         decimal MakeOperation(String operation);

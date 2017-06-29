@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculator.cs" />
+    <Compile Include="CalculatorTrainer.cs" />
     <Compile Include="Interface1.cs" />
     <Compile Include="Div.cs" />
     <Compile Include="Sub.cs" />
