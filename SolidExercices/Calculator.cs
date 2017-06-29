@@ -9,13 +9,57 @@ namespace SolidExercices
     {
         public decimal Calculate(string operation)
         {
-            decimal sum = 0;
-            String[] listNumber = operation.Split('+');
-            foreach (var oneNumber in listNumber)
+            decimal total;
+
+            if (operation.Contains("+"))
+            {
+                total = 0;
+                String[] listNumber = operation.Split('+');
+                foreach (var oneNumber in listNumber)
+                {
+                    try
+                    {
+                        total += Convert.ToDecimal(oneNumber);
+                    }
+                    catch (System.FormatException)
+                    {
+                        Console.WriteLine("Caracteres entrés non pris en charge");
+                        return 0;
+                    }
+                }
+            }
+            else if (operation.Contains("-"))
+            {
+                String[] listNumber = operation.Split('-');
+                try
+                {
+                    total = Convert.ToDecimal(listNumber[0]);
+                    listNumber[0] = "0";
+                }
+                catch (System.FormatException)
+                {
+                    Console.WriteLine("Caracteres entrés non pris en charge");
+                    return 0;
+                }
+
+                foreach (var oneNumber in listNumber)
+                {
+                    try
+                    {
+                        total = total - Convert.ToDecimal(oneNumber);
+                    }
+                    catch (System.FormatException)
+                    {
+                        Console.WriteLine("Caracteres entrés non pris en charge");
+                        return 0;
+                    }
+                }
+            }
+            else
             {
                 try
                 {
-                    sum += Convert.ToDecimal(oneNumber);
+                    total = Convert.ToDecimal(operation);
                 }
                 catch (System.FormatException)
                 {
@@ -23,7 +67,7 @@ namespace SolidExercices
                     return 0;
                 }
             }
-            return sum;
+            return total;
         }
     }
 
