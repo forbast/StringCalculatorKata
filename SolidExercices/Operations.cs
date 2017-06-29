@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 namespace SolidExercices {
     class Operations
     {
-        public readonly string[] _operations = new[] { "1+2,3", "2 x 3,6", "6-1-3,8", "6,6/3", "6/0", "not an operation", "a+1", "12", "" };
+        internal readonly string[] _operations = { "1+2,3", "2 x 3,6", "6-1-3,8", "6,6/3", "6/0", "not an operation", "a+1", "12", "" };
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using SolidExercices;
 
 namespace SolidExercices
 {
@@ -23,10 +22,10 @@ namespace SolidExercices
                 }
                 catch (ArgumentException e)
                 {
-                    System.Console.WriteLine("ERROR: " + e.Message);
+                    Console.WriteLine("ERROR: " + e.Message);
                 }
             }
-            System.Console.ReadKey();
+            Console.ReadKey();
         }
     }
 }
